@@ -11,8 +11,6 @@ function Interfaz() {
     <div>
       <Navbar></Navbar>
       <Landing></Landing>
-
-      
       <CardLanding></CardLanding>
       <Footer></Footer>
     </div>

@@ -1,5 +1,30 @@
 {
-  "compras": [],
+  "productosC": [
+    {
+      "id": "1",
+      "nombre": "Pastel de chocolate",
+      "precio": "200",
+      "imagen": "https://i.pinimg.com/474x/24/6f/af/246fafffbfd1598b9af4138dd394635b.jpg"
+    },
+    {
+      "id": "2",
+      "nombre": "Pastel de fresa",
+      "precio": "250",
+      "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-de-fresa-1-760x500.jpg"
+    },
+    {
+      "id": "3",
+      "nombre": "Pastel de vainilla",
+      "precio": "180",
+      "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-de-vainilla-1-760x500.jpg"
+    },
+    {
+      "id": "4",
+      "nombre": "Pastel red velvet",
+      "precio": "300",
+      "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-red-velvet-1-760x500.jpg"
+    }
+  ],
   "Mensajes": [],
   "respuestasPersonalizadas": [
     {

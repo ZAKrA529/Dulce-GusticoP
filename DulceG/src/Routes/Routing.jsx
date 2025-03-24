@@ -5,6 +5,7 @@ import InicioSesion from "../Pages/InicioSesion";
 import Admin from '../Pages/Admin'
 import Contacto from '../Pages/Contacto'
 import Users from '../Pages/Users'
+import Productos from '../Pages/Productos'
 
 
 
@@ -18,6 +19,7 @@ const Routing = () => {
       <Route path="/admin" element={<Admin />} />
       <Route path="/registros" element={<InicioSesion />} />
       <Route path="/users" element={<Users />} />
+      <Route path="/productos" element={<Productos />} />
     </Routes>
   );
 };
