@@ -19,7 +19,6 @@ function ChatBot() {
                 setHistorial(mensajeRes.data);
                 setRespuestasPersonalizadas(respuestaRes.data);
 
-                // Agregar las preguntas frecuentes al chat
                 const preguntasIniciales = respuestaRes.data.map(item => ({ remitente: 'bot', texto: item.pregunta }));
                 setHistorial(prevHistorial => [...prevHistorial, ...preguntasIniciales]);
             } catch (error) {
@@ -49,17 +48,18 @@ function ChatBot() {
 
         try {
             const respuestaPersonalizada = buscarRespuestaPersonalizada(mensaje);
-
             const respuestaBot = respuestaPersonalizada || await obtenerRespuesta(mensaje);
 
-            const nuevoMensajeBot = { remitente: 'bot', texto: respuestaBot };
-            const historialActualizado = [...nuevoHistorial, nuevoMensajeBot];
-            setHistorial(historialActualizado);
+            setTimeout(async () => {
+                const nuevoMensajeBot = { remitente: 'bot', texto: respuestaBot };
+                const historialActualizado = [...nuevoHistorial, nuevoMensajeBot];
+                setHistorial(historialActualizado);
 
-            await axios.post('http://localhost:3003/Mensajes', { remitente: 'usuario', texto: mensaje });
-            await axios.post('http://localhost:3003/Mensajes', nuevoMensajeBot);
-        }
-        catch (error) {
+                await axios.post('http://localhost:3003/Mensajes', { remitente: 'usuario', texto: mensaje });
+                await axios.post('http://localhost:3003/Mensajes', nuevoMensajeBot);
+            }, 1500);
+
+        } catch (error) {
             console.error('Error al enviar el mensaje:', error);
         }
     };
@@ -67,18 +67,17 @@ function ChatBot() {
     const alternarChat = () => setMostrarChat(!mostrarChat);
 
     return (
-        <div className="container mt-4">
-            <h2 className="text-center mb-4">Chat de la Pastelería</h2>
-
+        <div className="chatbot-container" style={{ position: 'fixed', bottom: '50px', right: '50px', zIndex: 9999 }}>
             <img
                 src="https://i.pinimg.com/736x/54/41/cf/5441cf0924b4af11d86d537d29c3a084.jpg"
                 alt="Chat"
-                style={{ width: '150px', cursor: 'pointer' }}
+                style={{ width: '80px', cursor: 'pointer' }}
                 onClick={alternarChat}
             />
 
             {mostrarChat && (
-                <div className="card shadow-sm mt-4" style={{ height: '400px', overflowY: 'auto' }}>
+                <div className="card shadow-sm" style={{ width: '350px', height: '500px', overflowY: 'auto' }}>
+                    <div className="card-header bg-primary text-white">🧁 Chat de la Pastelería</div>
                     <div className="card-body">
                         {historial.map((msg, index) => (
                             <div
@@ -92,20 +91,22 @@ function ChatBot() {
                         ))}
                     </div>
 
-                    <div className="input-group mt-3">
-                        <input
-                            type="text"
-                            value={mensaje}
-                            onChange={(e) => setMensaje(e.target.value)}
-                            placeholder="Escribe un mensaje..."
-                            className="form-control"
-                        />
-                        <button
-                            onClick={envioMensaje}
-                            className="btn btn-pink"
-                        >
-                            <i className="bi bi-send"></i> Enviar
-                        </button>
+                    <div className="card-footer">
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                value={mensaje}
+                                onChange={(e) => setMensaje(e.target.value)}
+                                placeholder="Escribe un mensaje..."
+                                className="form-control"
+                            />
+                            <button
+                                onClick={envioMensaje}
+                                className="btn btn-primary"
+                            >
+                                <i className="bi bi-send"></i> Enviar
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}

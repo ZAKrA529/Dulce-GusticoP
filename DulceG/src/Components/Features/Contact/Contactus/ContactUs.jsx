@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Swal from 'sweetalert2';
-import { BsPerson, BsEnvelope, BsFillChatDotsFill } from 'react-icons/bs'; // Aquí agregamos los íconos
+import { BsPerson, BsEnvelope, BsFillChatDotsFill } from 'react-icons/bs';
 
 export const ContactUs = () => {
   const form = useRef();
@@ -10,42 +10,35 @@ export const ContactUs = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_xn7vhm9', 'template_skae75q', form.current, {
-        publicKey: '9pkN5JMayp3RkI8GX',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
+    // Primero, mostramos una alerta de confirmación
+    Swal.fire({
+      title: '¿Estás seguro de enviar este mensaje?',
+      text: 'Revisa tu mensaje antes de enviarlo.',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, enviar',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma, enviamos el correo
+        emailjs
+          .sendForm('service_8crbqlc', 'template_t3ljt5o', form.current, {
+            publicKey: '9pkN5JMayp3RkI8GX',
+          })
+          .then(
+            () => {
+              // Alerta de éxito
+              Swal.fire('Mensaje Enviado', 'Tu mensaje ha sido enviado correctamente.', 'success');
+            },
+            (error) => {
+              // Alerta de error
+              Swal.fire('Error', 'Hubo un problema al enviar el mensaje.', 'error');
+              console.error('FAILED...', error.text);
+            }
+          );
+      }
+    });
   };
-
-  let timerInterval;
-Swal.fire({
-  title: "Auto close alert!",
-  html: "I will close in <b></b> milliseconds.",
-  timer: 1,
-  timerProgressBar: true,
-  didOpen: () => {
-    Swal.showLoading();
-    const timer = Swal.getPopup().querySelector("b");
-    timerInterval = setInterval(() => {
-      timer.textContent = `${Swal.getTimerLeft()}`;
-    }, 100);
-  },
-  willClose: () => {
-    clearInterval(timerInterval);
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    console.log("I was closed by the timer");
-  }
-});
 
   return (
     <div className="container py-5 w-10">
@@ -61,7 +54,7 @@ Swal.fire({
                     <BsPerson className="me-2" /> Nombre
                   </label>
                   <input
-                  placeholder='Tu nombre'
+                    placeholder='Tu nombre'
                     type="text"
                     className="form-control form-control-sm"
                     id="user_name"
@@ -75,7 +68,7 @@ Swal.fire({
                     <BsEnvelope className="me-2" /> Correo Electrónico
                   </label>
                   <input
-                  placeholder='medinakevinangulo@gmail.com'
+                    placeholder='medinakevinangulo@gmail.com'
                     type="email"
                     className="form-control form-control-sm"
                     id="user_email"
@@ -89,7 +82,7 @@ Swal.fire({
                     <BsFillChatDotsFill className="me-2" /> Mensaje
                   </label>
                   <textarea
-                  placeholder='Escribe tu mensaje acerca de tu consulta'
+                    placeholder='Escribe tu mensaje acerca de tu consulta'
                     className="form-control form-control-sm"
                     id="message"
                     name="message"

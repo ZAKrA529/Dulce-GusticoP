@@ -1,23 +1,30 @@
 {
-    "compras": [],
-    "Mensajes": [],
-    "respuestasPersonalizadas": [
-      {
-        "pregunta": "¿Cuáles son los sabores de pastel?adasddas",
-        "respuesta": "Tenemos chocolate, vainilla, fresa y red velvet.",
-        "id": "1"
-      },
-      {
-        "id": "2",
-        "pregunta": "¿Cuál es el horario de atención?",
-        "respuesta": "Atendemos de lunes a sábado de 8:00 a.m. a 6:00 p.m."
-      },
-      {
-        "id": "3",
-        "pregunta": "¿Hacen entregas a domicilio?",
-        "respuesta": "Sí, hacemos entregas a domicilio"
-      }
-    ],
-    "Productos": [],
-    "registro": []
-  }
+  "compras": [],
+  "Mensajes": [],
+  "respuestasPersonalizadas": [
+    {
+      "pregunta": "¿Cuáles son los sabores de pastel?adasddas",
+      "respuesta": "Tenemos chocolate, vainilla, fresa y red velvet.",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "pregunta": "¿Cuál es el horario de atención?",
+      "respuesta": "Atendemos de lunes a sábado de 8:00 a.m. a 6:00 p.m."
+    },
+    {
+      "id": "3",
+      "pregunta": "¿Hacen entregas a domicilio?",
+      "respuesta": "Sí, hacemos entregas a domicilio"
+    }
+  ],
+  "Productos": [],
+  "registro": [
+    {
+      "id": "f825",
+      "nombre": "Dayana",
+      "correoE": "dayana@gmail.com",
+      "Contrasena": "111"
+    }
+  ]
+}
