@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import productos from '../../../Services/productos';  // Importar el objeto por defecto
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import { FaShoppingCart } from 'react-icons/fa';  
+import { FaShoppingCart, FaTrash } from 'react-icons/fa';  
 import Swal from 'sweetalert2'; 
 
 function ProductsC() {
@@ -34,6 +34,12 @@ function ProductsC() {
             confirmButtonText: '¡Genial!'
         });
     };
+
+     const btnEliminar = (index) => {
+        const newCart = [...cart]
+        newCart.splice(index, 1);
+        setCart(newCart)
+     }
 
     return (
         <div className="container py-5">
@@ -71,6 +77,12 @@ function ProductsC() {
                         {cart.map((item, index) => (
                             <li className="list-group-item" key={index}>
                                 {item.name} - ${item.price}
+                                <button
+                                    className='btn btn-secundarie d-flex aling-items-center'
+                                    onClick={() => btnEliminar(index)}
+
+
+                                    ><FaTrash></FaTrash></button>
                             </li>
                         ))}
                     </ul>

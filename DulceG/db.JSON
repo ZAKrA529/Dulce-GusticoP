@@ -25,10 +25,31 @@
       "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-red-velvet-1-760x500.jpg"
     }
   ],
-  "Mensajes": [],
+  "Mensajes": [
+    {
+      "id": "4094",
+      "remitente": "usuario",
+      "texto": "qwqweqwe"
+    },
+    {
+      "id": "a9dd",
+      "remitente": "bot",
+      "texto": "Hubo un error, intenta más tarde."
+    },
+    {
+      "id": "6b46",
+      "remitente": "usuario",
+      "texto": "¿Hacen entregas a domicilio?"
+    },
+    {
+      "id": "1469",
+      "remitente": "bot",
+      "texto": "Sí, hacemos entregas a domicilio"
+    }
+  ],
   "respuestasPersonalizadas": [
     {
-      "pregunta": "¿Cuáles son los sabores de pastel?adasddas",
+      "pregunta": "¿Cuáles son los sabores de pastel?",
       "respuesta": "Tenemos chocolate, vainilla, fresa y red velvet.",
       "id": "1"
     },

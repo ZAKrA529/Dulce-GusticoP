@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Chart, registerables } from 'chart.js';
-import * as XLSX from 'xlsx';
+
 
 Chart.register(...registerables);
 
