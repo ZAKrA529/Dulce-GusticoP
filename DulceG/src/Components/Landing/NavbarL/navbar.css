@@ -1,0 +1,27 @@
+
+.navbar:hover {
+    background-color: #3c4147; /* Cambiar el color de fondo al pasar el ratón */
+  }
+  
+  
+  
+  .nav-link:hover {
+    color: #ffffff !important; 
+    background-color: #495057; 
+    border-radius: 5px; 
+    transform: scale(1.1); 
+  }
+  
+  .navbar-brand:hover {
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño */
+  /
+  }
+  
+  .DulceGustico{
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+  .navbar .navbar-expand-lg{
+    gap: 10px;
+  }
