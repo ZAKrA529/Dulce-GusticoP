@@ -1,61 +1,125 @@
-import React, { useState, useEffect } from 'react';
-import { Chart, registerables } from 'chart.js';
-import * as XLSX from 'xlsx';
+import React, { useEffect, useRef, useState } from "react";
+import * as XLSX from "xlsx";
+import { Chart } from "chart.js/auto";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-Chart.register(...registerables);
+const GraficoExcel = () => {
+  const graficoRef = useRef(null);
+  const [datosGrafico, setDatosGrafico] = useState({ etiquetas: [], valores: [] });
+  const instanciaGraficoRef = useRef(null);
 
-function ExcelChart() {
-  const [chartData, setChartData] = useState([]);
-  const chartRef = React.useRef(null);
-  let myChart = null;
+  // Función para procesar el archivo Excel
+  const manejarCargaArchivo = (e) => {
+    const archivo = e.target.files[0];
+    if (archivo) {
+      const lector = new FileReader();
 
-  const readExcel = (file) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const data = new Uint8Array(e.target.result);
-      const workbook = XLSX.read(data, { type: 'array' });
-      const sheetName = workbook.SheetNames[0];
-      const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-      
-      // Extraer datos (asumiendo columnas: "Etiqueta" y "Valor")
-      const labels = sheetData.map((item) => item.Etiqueta);
-      const values = sheetData.map((item) => item.Valor);
+      lector.onload = (e) => {
+        const datos = new Uint8Array(e.target.result);
+        const libro = XLSX.read(datos, { type: "array" });
 
-      setChartData({ labels, values });
-    };
-    reader.readAsArrayBuffer(file);
+        // Tomar la primera hoja del Excel
+        const nombreHoja = libro.SheetNames[0];
+        const hoja = XLSX.utils.sheet_to_json(libro.Sheets[nombreHoja], { header: 1 });
+
+        // Validar que al menos haya dos columnas
+        if (hoja.length < 2 || hoja[0].length < 2) {
+          alert("El archivo Excel debe tener al menos dos columnas (Fecha y Valor).");
+          return;
+        }
+
+        // Extraer las fechas y valores
+        const fechas = hoja.slice(1).map((fila) => formatearFecha(fila[0]));
+        const valores = hoja.slice(1).map((fila) => fila[1]);
+
+        setDatosGrafico({ etiquetas: fechas, valores });
+      };
+
+      lector.readAsArrayBuffer(archivo);
+    }
   };
 
+  // Función para formatear las fechas
+  const formatearFecha = (fechaExcel) => {
+    // Si es un número (formato de fecha en Excel), lo convertimos a fecha
+    if (typeof fechaExcel === "number") {
+      const fecha = new Date((fechaExcel - 25569) * 86400 * 1000);
+      return fecha.toISOString().split("T")[0]; // Devuelve en formato YYYY-MM-DD
+    }
+    return fechaExcel; // Si ya está formateado, lo dejamos igual
+  };
+
+  // Renderiza el gráfico cuando los datos cambian
   useEffect(() => {
-    if (chartRef.current && chartData.labels) {
-      if (myChart) myChart.destroy(); // Destruir gráfico previo
-      myChart = new Chart(chartRef.current, {
-        type: 'bar',
+    if (graficoRef.current && datosGrafico.etiquetas.length) {
+      if (instanciaGraficoRef.current) instanciaGraficoRef.current.destroy(); // Destruye el gráfico anterior si existe
+
+      instanciaGraficoRef.current = new Chart(graficoRef.current, {
+        type: "line", // Gráfico de líneas
         data: {
-          labels: chartData.labels,
+          labels: datosGrafico.etiquetas,
           datasets: [
             {
-              label: 'Datos desde Excel',
-              data: chartData.values,
-              backgroundColor: 'rgba(75, 192, 192, 0.6)',
+              label: "Tendencia por Fecha",
+              data: datosGrafico.valores,
+              borderColor: "rgba(54, 162, 235, 1)",
+              backgroundColor: "rgba(54, 162, 235, 0.2)",
+              borderWidth: 2,
+              tension: 0.3, // Suaviza las líneas
             },
           ],
         },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "top" },
+            tooltip: {
+              callbacks: {
+                // Muestra la fecha y el valor en el tooltip
+                label: (tooltipItem) =>
+                  `Fecha: ${tooltipItem.label} | Valor: ${tooltipItem.raw}`,
+              },
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Fecha",
+              },
+            },
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Valor",
+              },
+            },
+          },
+        },
       });
     }
-  }, [chartData]);
+  }, [datosGrafico]);
 
   return (
-    <div>
-      <h2>Gráfico conectado a Excel</h2>
-      <input
-        type="file"
-        accept=".xlsx, .xls"
-        onChange={(e) => readExcel(e.target.files[0])}
-      />
-      <canvas ref={chartRef}></canvas>
+    <div className="container mt-4">
+      <div className="card shadow-sm" style={{ maxWidth: "600px", margin: "0 auto" }}>
+        <div className="card-body">
+          <h4 className="card-title text-center mb-3">📊 Cargar Excel y Visualizar Tendencias</h4>
+          <input
+            type="file"
+            accept=".xlsx, .xls"
+            onChange={manejarCargaArchivo}
+            className="form-control mb-4"
+          />
+          <div style={{ height: "300px" }}>
+            <canvas ref={graficoRef} />
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
-export default ExcelChart;
+export default GraficoExcel;

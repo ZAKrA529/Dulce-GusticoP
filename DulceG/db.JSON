@@ -25,7 +25,38 @@
       "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-red-velvet-1-760x500.jpg"
     }
   ],
-  "Mensajes": [],
+  "Mensajes": [
+    {
+      "id": "adab",
+      "remitente": "usuario",
+      "texto": "¿Cuál es el horario de atención?"
+    },
+    {
+      "id": "e654",
+      "remitente": "bot",
+      "texto": "Atendemos de lunes a sábado de 8:00 a.m. a 6:00 p.m."
+    },
+    {
+      "id": "0ee2",
+      "remitente": "usuario",
+      "texto": "¿Hacen entregas a domicilio?"
+    },
+    {
+      "id": "13ba",
+      "remitente": "bot",
+      "texto": "Sí, hacemos entregas a domicilio"
+    },
+    {
+      "id": "e455",
+      "remitente": "usuario",
+      "texto": "suma 2+2"
+    },
+    {
+      "id": "3f45",
+      "remitente": "bot",
+      "texto": "Hubo un error, intenta más tarde."
+    }
+  ],
   "respuestasPersonalizadas": [
     {
       "pregunta": "¿Cuáles son los sabores de pastel?adasddas",

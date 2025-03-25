@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RespuestasCrud from '../../Chat/RespuestasCrud/RespuestasCrud';
 import Adds from '../../Features/Adds/Adds'
-
+import Grafico from '../Grafico/Grafico'
 function AdminC() {
   return (
     <div className="d-flex">
@@ -20,8 +20,13 @@ function AdminC() {
             <a href="productos" className="nav-link text-white">Productos</a>
           </li>
           <li className="nav-item mb-2">
+            <a href="ventas" className="nav-link text-white">Ventas</a>
+          </li>
+
+          <li className="nav-item mb-2">
             <a href="#" className="nav-link text-white">Reportes</a>
           </li>
+
           <li className="nav-item mb-2">
             <a href="#" className="nav-link text-white">Configuración</a>
           </li>
@@ -33,12 +38,7 @@ function AdminC() {
         <h1 className="mb-4">Bienvenido Administrador Alexander</h1>
         <RespuestasCrud></RespuestasCrud> <br />  <br />
         <Adds></Adds>
-        
-        <div className="card shadow-sm p-3">
-          <h4>Resumen del Sistema</h4>
-          <p>Explora y administra los recursos de la plataforma de forma eficiente.</p>
-          <button className="btn btn-primary">Ver Detalles</button>
-        </div>
+        <Grafico></Grafico>
       </div>
     </div>
   );
