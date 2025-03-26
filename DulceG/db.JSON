@@ -2,27 +2,115 @@
   "productosC": [
     {
       "id": "1",
-      "nombre": "Pastel de chocolate",
-      "precio": "200",
-      "imagen": "https://i.pinimg.com/474x/24/6f/af/246fafffbfd1598b9af4138dd394635b.jpg"
+      "name": "Laptop Gamer",
+      "description": "Laptop potente para gaming.",
+      "price": 1500,
+      "image": "https://i.pinimg.com/474x/87/77/29/87772910c34acd91f6c4e793534dca12.jpg"
     },
     {
       "id": "2",
-      "nombre": "Pastel de fresa",
-      "precio": "250",
-      "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-de-fresa-1-760x500.jpg"
+      "name": "Mouse Inalámbrico",
+      "description": "Mouse ergonómico para trabajo remoto.",
+      "price": 50,
+      "image": "https://i.pinimg.com/474x/fd/ba/41/fdba419a8d01aa1cc5ef1ad9a36c5279.jpg"
     },
     {
       "id": "3",
-      "nombre": "Pastel de vainilla",
-      "precio": "180",
-      "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-de-vainilla-1-760x500.jpg"
+      "name": "Teclado Mecánico",
+      "description": "Teclado con luces LED para gaming.",
+      "price": 100,
+      "image": "https://i.pinimg.com/474x/db/77/73/db7773902d2f201abc5737ffab94ab8a.jpg"
     },
     {
       "id": "4",
-      "nombre": "Pastel red velvet",
-      "precio": "300",
-      "imagen": "https://www.recetasgratis.net/wp-content/uploads/2017/05/pastel-red-velvet-1-760x500.jpg"
+      "name": "Monitor Curvo",
+      "description": "Monitor curvo para mayor inmersión.",
+      "price": 300,
+      "image": "https://i.pinimg.com/736x/80/4e/cc/804ecc4fbfc42852c473f6c7ae4c8a18.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Audífonos Gamer",
+      "description": "Audífonos con micrófono para gaming.",
+      "price": 80,
+      "image": "https://i.pinimg.com/736x/b9/5b/e9/b95be9e1ec6eb519683bc83c3cffc6a6.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Cámara Web",
+      "description": "Cámara web HD para videollamadas."
+    },
+    {
+      "id": "7",
+      "name": "Impresora Multifuncional",
+      "description": "Impresora con escáner y copiadora."
+    },
+    {
+      "id": "8",
+      "name": "Disco Duro Externo",
+      "description": "Disco duro portátil de 1TB."
+    },
+    {
+      "id": "9",
+      "name": "Bocinas Bluetooth",
+      "description": "Bocinas portátiles con conexión Bluetooth."
+    },
+    {
+      "id": "10",
+      "name": "Smartwatch",
+      "description": "Reloj inteligente con monitoreo de actividad."
+    },
+    {
+      "id": "11",
+      "name": "Tablet",
+      "description": "Tablet con pantalla HD de 10 pulgadas."
+    },
+    {
+      "id": "12",
+      "name": "Cargador Inalámbrico",
+      "description": "Cargador inalámbrico para smartphone."
+    },
+    {
+      "id": "13",
+      "name": "Mochila Antirrobo",
+      "description": "Mochila con cierre oculto y puerto USB."
+    },
+    {
+      "id": "14",
+      "name": "Funda para Laptop",
+      "description": "Funda acolchonada para laptop de 15 pulgadas."
+    },
+    {
+      "id": "15",
+      "name": "Memoria USB",
+      "description": "Memoria USB de 32GB."
+    },
+    {
+      "id": "16",
+      "name": "Base para Laptop",
+      "description": "Base ajustable para laptop."
+    },
+    {
+      "id": "17",
+      "name": "Lámpara LED",
+      "description": "Lámpara de escritorio con luz LED."
+    },
+    {
+      "id": "18",
+      "name": "Mesa para Laptop",
+      "description": "Mesa plegable para laptop."
+    },
+    {
+      "id": "19",
+      "name": "Silla Gamer",
+      "description": "Silla ergonómica para gaming.",
+      "price": 200,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "20",
+      "name": "Escritorio Gamer",
+      "description": "Escritorio para gaming con soporte para monitor."
     }
   ],
   "Mensajes": [
@@ -55,11 +143,21 @@
       "id": "3f45",
       "remitente": "bot",
       "texto": "Hubo un error, intenta más tarde."
+    },
+    {
+      "id": "3e44",
+      "remitente": "usuario",
+      "texto": "¿Hacen entregas a domicilio?"
+    },
+    {
+      "id": "0572",
+      "remitente": "bot",
+      "texto": "Sí, hacemos entregas a domicilio"
     }
   ],
   "respuestasPersonalizadas": [
     {
-      "pregunta": "¿Cuáles son los sabores de pastel?adasddas",
+      "pregunta": "¿Cuáles son los sabores de pastel?",
       "respuesta": "Tenemos chocolate, vainilla, fresa y red velvet.",
       "id": "1"
     },

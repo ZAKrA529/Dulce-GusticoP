@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductosC from '../Components/Store/ProductsC/ProductsC'
 
+
 function Productos() {
   return (
     <div>

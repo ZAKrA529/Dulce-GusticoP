@@ -24,7 +24,7 @@ function AdminC() {
           </li>
 
           <li className="nav-item mb-2">
-            <a href="#" className="nav-link text-white">Reportes</a>
+            <a href="reportesAdmin" className="nav-link text-white">Reportes</a>
           </li>
 
           <li className="nav-item mb-2">
@@ -35,7 +35,7 @@ function AdminC() {
    
       {/* Main Content */}
       <div className="flex-grow-1 p-4" >
-        <h1 className="mb-4">Bienvenido Administrador Alexander</h1>
+        <h1 className="mb-4">Bienvenido Administrador don Alex</h1>
         <RespuestasCrud></RespuestasCrud> <br />  <br />
         <Adds></Adds>
         <Grafico></Grafico>
