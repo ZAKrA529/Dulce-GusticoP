@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import * as XLSX from "xlsx";
-import { Chart } from "chart.js/auto";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, useEffect } from 'react';
+import { Chart, registerables } from 'chart.js';
+import * as XLSX from 'xlsx';
+
+Chart.register(...registerables);
 
 const GraficoExcel = () => {
   const graficoRef = useRef(null);

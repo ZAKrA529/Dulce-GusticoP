@@ -28,6 +28,9 @@ function AdminC() {
           </li>
 
           <li className="nav-item mb-2">
+            <a href="ventas" className="nav-link text-white">Ventas</a>
+          </li>
+          <li className="nav-item mb-2">
             <a href="#" className="nav-link text-white">Configuración</a>
           </li>
         </ul>
