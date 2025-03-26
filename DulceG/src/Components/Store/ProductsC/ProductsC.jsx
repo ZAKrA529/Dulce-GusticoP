@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import productos from '../../../Services/productos';  // Importar el objeto por defecto
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import { FaShoppingCart } from 'react-icons/fa';  
-import Swal from 'sweetalert2'; 
+import productos from '../../../Services/productos';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaShoppingCart, FaDelicious } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 function ProductsC() {
     const [products, setProducts] = useState([]);
@@ -35,6 +35,7 @@ function ProductsC() {
             confirmButtonText: '¡Genial!'
         });
     };
+    
 
     return (
         <div className="container py-5 position-relative">
@@ -78,22 +79,6 @@ function ProductsC() {
                     ))
                 ) : (
                     <p className="text-center">Cargando productos...</p>
-                )}
-            </div>
-
-            {/* Resumen del carrito */}
-            <div className="mt-4">
-                <h4>Carrito de compras <FaShoppingCart /></h4>
-                {cart.length > 0 ? (
-                    <ul className="list-group">
-                        {cart.map((item, index) => (
-                            <li className="list-group-item" key={index}>
-                                {item.name} - ${item.price}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>No has añadido productos al carrito.</p>
                 )}
             </div>
         </div>

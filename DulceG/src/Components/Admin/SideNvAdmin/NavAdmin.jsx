@@ -8,7 +8,7 @@ function NavAdmin() {
 
   const handleBuscar = async () => {
     // Lanza la alerta con el input para ingresar el nombre del usuario
-    const { value: nombre } = await Swal.fire({
+    const { value: nombreUsuario } = await Swal.fire({
       title: 'Buscar Usuario',
       input: 'text',
       inputLabel: 'Ingrese el nombre del usuario',
@@ -21,11 +21,11 @@ function NavAdmin() {
       },
     });
 
-    if (!nombre) return; // Si no ingresan nada, no hace la búsqueda
+    if (!nombreUsuario) return; // Si no ingresan nada, no hace la búsqueda
 
     try {
       // Llama al servicio para buscar usuarios
-      const usuariosRegistrados = await registro.GetUser(nombre);
+      const usuariosRegistrados = await registro.GetUser(nombreUsuario);
 
       // Si no se encuentran resultados
       if (!usuariosRegistrados || usuariosRegistrados.length === 0) {

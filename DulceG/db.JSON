@@ -155,31 +155,6 @@
       "texto": "Sí, hacemos entregas a domicilio"
     }
   ],
-<<<<<<< HEAD
-=======
-  "Mensajes": [
-    {
-      "id": "4094",
-      "remitente": "usuario",
-      "texto": "qwqweqwe"
-    },
-    {
-      "id": "a9dd",
-      "remitente": "bot",
-      "texto": "Hubo un error, intenta más tarde."
-    },
-    {
-      "id": "6b46",
-      "remitente": "usuario",
-      "texto": "¿Hacen entregas a domicilio?"
-    },
-    {
-      "id": "1469",
-      "remitente": "bot",
-      "texto": "Sí, hacemos entregas a domicilio"
-    }
-  ],
->>>>>>> 4fbaeea191687f43e081c3b893efab58113487c1
   "respuestasPersonalizadas": [
     {
       "pregunta": "¿Cuáles son los sabores de pastel?",
