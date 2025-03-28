@@ -9,6 +9,7 @@ import Productos from '../Pages/Productos'
 import Ventas from "../Pages/Ventas";
 import Pasarelapagos from "../Pages/pasarelapagos";
 import ReportesAdminP from "../Pages/ReportesAdminP";
+import PagosP from "../Pages/PagosP";
 
 
 
@@ -26,6 +27,7 @@ const Routing = () => {
       <Route path="/ventas" element={<Ventas />} />
       <Route path="/pasarela" element={<Pasarelapagos />} />
       <Route path="/reportesAdmin" element={<ReportesAdminP />} />
+      <Route path="/seccion-pagos" element={<PagosP />} />
     </Routes>
   );
 };

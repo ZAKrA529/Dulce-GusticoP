@@ -29,7 +29,7 @@ function ProductsC() {
         localStorage.setItem('cart', JSON.stringify(newCart));
     
         Swal.fire({
-            title: '¡Producto añadido!',
+               title: '¡Producto añadido!',
             text: `Has añadido ${product.name} al carrito!`,
             icon: 'success',
             confirmButtonText: '¡Genial!'

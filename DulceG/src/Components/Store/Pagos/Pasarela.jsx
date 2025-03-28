@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaTrash } from 'react-icons/fa';
 
+
+
+
+
+
 function Pasarela() {
     const [productosCarrito, setProductosCarrito] = useState([]);
 
@@ -67,7 +72,7 @@ function Pasarela() {
                 <h4 className="fw-bold">TOTAL: ₡ {productosCarrito.reduce((total, p) => total + p.price, 0) + 2500}</h4>
             </div>
 
-            <button className="btn btn-primary mt-3">Seguir Comprando</button>
+            <button className="btn btn-primary mt-3" >s<a href="seccion-pagos"></a>Seguir Comprando</button>
         </div>
     );
 }

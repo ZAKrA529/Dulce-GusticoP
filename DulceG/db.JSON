@@ -2,115 +2,143 @@
   "productosC": [
     {
       "id": "1",
-      "name": "Laptop Gamer",
-      "description": "Laptop potente para gaming.",
-      "price": 1500,
-      "image": "https://i.pinimg.com/474x/87/77/29/87772910c34acd91f6c4e793534dca12.jpg"
+      "name": "Pastel de Chocolate",
+      "description": "Delicioso pastel de chocolate con relleno cremoso.",
+      "price": 25,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "2",
-      "name": "Mouse Inalámbrico",
-      "description": "Mouse ergonómico para trabajo remoto.",
-      "price": 50,
-      "image": "https://i.pinimg.com/474x/fd/ba/41/fdba419a8d01aa1cc5ef1ad9a36c5279.jpg"
+      "name": "Cupcakes Variados",
+      "description": "Caja con 6 cupcakes de distintos sabores.",
+      "price": 15,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "3",
-      "name": "Teclado Mecánico",
-      "description": "Teclado con luces LED para gaming.",
-      "price": 100,
-      "image": "https://i.pinimg.com/474x/db/77/73/db7773902d2f201abc5737ffab94ab8a.jpg"
+      "name": "Cheesecake de Fresa",
+      "description": "Cheesecake cremoso con mermelada de fresa.",
+      "price": 30,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "4",
-      "name": "Monitor Curvo",
-      "description": "Monitor curvo para mayor inmersión.",
-      "price": 300,
-      "image": "https://i.pinimg.com/736x/80/4e/cc/804ecc4fbfc42852c473f6c7ae4c8a18.jpg"
+      "name": "Macarons Franceses",
+      "description": "Caja con 10 macarons de almendra en distintos sabores.",
+      "price": 20,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "5",
-      "name": "Audífonos Gamer",
-      "description": "Audífonos con micrófono para gaming.",
-      "price": 80,
-      "image": "https://i.pinimg.com/736x/b9/5b/e9/b95be9e1ec6eb519683bc83c3cffc6a6.jpg"
+      "name": "Tiramisú",
+      "description": "Postre italiano con café, queso mascarpone y cacao.",
+      "price": 18,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "6",
-      "name": "Cámara Web",
-      "description": "Cámara web HD para videollamadas."
+      "name": "Galletas Decoradas",
+      "description": "Caja con 12 galletas de mantequilla decoradas con glaseado.",
+      "price": 12,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "7",
-      "name": "Impresora Multifuncional",
-      "description": "Impresora con escáner y copiadora."
+      "name": "Brazo Gitano",
+      "description": "Bizcocho enrollado relleno de crema y frutas.",
+      "price": 22,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "8",
-      "name": "Disco Duro Externo",
-      "description": "Disco duro portátil de 1TB."
+      "name": "Croissants",
+      "description": "4 croissants de mantequilla recién horneados.",
+      "price": 10,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "9",
-      "name": "Bocinas Bluetooth",
-      "description": "Bocinas portátiles con conexión Bluetooth."
+      "name": "Dona Glaseada",
+      "description": "Dona esponjosa con glaseado de azúcar.",
+      "price": 3,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "10",
-      "name": "Smartwatch",
-      "description": "Reloj inteligente con monitoreo de actividad."
+      "name": "Brownies",
+      "description": "Brownies de chocolate con nueces.",
+      "price": 12,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "11",
-      "name": "Tablet",
-      "description": "Tablet con pantalla HD de 10 pulgadas."
+      "name": "Tarta de Manzana",
+      "description": "Tarta de manzana con toque de canela.",
+      "price": 28,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "12",
-      "name": "Cargador Inalámbrico",
-      "description": "Cargador inalámbrico para smartphone."
+      "name": "Pan de Elote",
+      "description": "Pan dulce de elote con un toque de vainilla.",
+      "price": 15,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "13",
-      "name": "Mochila Antirrobo",
-      "description": "Mochila con cierre oculto y puerto USB."
+      "name": "Churros",
+      "description": "6 churros rellenos con chocolate o dulce de leche.",
+      "price": 10,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "14",
-      "name": "Funda para Laptop",
-      "description": "Funda acolchonada para laptop de 15 pulgadas."
+      "name": "Milhojas",
+      "description": "Postre de hojaldre con crema pastelera y azúcar glas.",
+      "price": 18,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "15",
-      "name": "Memoria USB",
-      "description": "Memoria USB de 32GB."
+      "name": "Alfajores",
+      "description": "Caja con 8 alfajores de dulce de leche.",
+      "price": 14,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "16",
-      "name": "Base para Laptop",
-      "description": "Base ajustable para laptop."
+      "name": "Pionono",
+      "description": "Bizcocho enrollado con dulce de leche y merengue.",
+      "price": 20,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "17",
-      "name": "Lámpara LED",
-      "description": "Lámpara de escritorio con luz LED."
+      "name": "Muffins de Arándanos",
+      "description": "4 muffins esponjosos con arándanos.",
+      "price": 10,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "18",
-      "name": "Mesa para Laptop",
-      "description": "Mesa plegable para laptop."
+      "name": "Pastel Tres Leches",
+      "description": "Pastel húmedo bañado en tres tipos de leche.",
+      "price": 25,
+      "image": "https://via.placeholder.com/150"
     },
     {
       "id": "19",
-      "name": "Silla Gamer",
-      "description": "Silla ergonómica para gaming.",
-      "price": 200,
+      "name": "Eclair de Chocolate",
+      "description": "Eclair relleno de crema pastelera y cubierto de chocolate.",
+      "price": 8,
       "image": "https://via.placeholder.com/150"
     },
     {
       "id": "20",
-      "name": "Escritorio Gamer",
-      "description": "Escritorio para gaming con soporte para monitor."
+      "name": "Tarta de Frutas",
+      "description": "Tarta con crema pastelera y frutas frescas.",
+      "price": 30,
+      "image": "https://via.placeholder.com/150"
     }
   ],
   "Mensajes": [
@@ -153,6 +181,16 @@
       "id": "0572",
       "remitente": "bot",
       "texto": "Sí, hacemos entregas a domicilio"
+    },
+    {
+      "id": "e88e",
+      "remitente": "usuario",
+      "texto": "dwde"
+    },
+    {
+      "id": "ce49",
+      "remitente": "bot",
+      "texto": "Hubo un error, intenta más tarde."
     }
   ],
   "respuestasPersonalizadas": [

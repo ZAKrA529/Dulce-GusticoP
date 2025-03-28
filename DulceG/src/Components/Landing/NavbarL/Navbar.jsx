@@ -4,19 +4,21 @@ import "./navbar.css";
 
 function NavigationBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm custom-navbar">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        {/* Logo y Nombre */}
+        <a className="navbar-brand d-flex align-items-center" href="/">
           <img
-            className="DulceGustico"
-            src="https://scontent.fsjo7-1.fna.fbcdn.net/v/t39.30808-6/471414918_10234609260914785_6011135909054111669_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=rYwv_JYAvjMQ7kNvgGDBzE5&_nc_oc=AdiobUkcq6FsSmDOd0r7t2SzvJEPmIrocgwEiRA_rMcrrGipoinvRfm9Wcg3dIrAEQq6OSusGxS-RVt9zC-OO88W&_nc_zt=23&_nc_ht=scontent.fsjo7-1.fna&_nc_gid=L26xlZdYImb1xiEmvsoKcw&oh=00_AYG83GP7QZxZjGhdk-BFkW3-OpEoYiBOOUC3D092wmpRjA&oe=67DAC0AE"
+            className="rounded-circle me-2"
+            src="https://scontent.fsjo7-1.fna.fbcdn.net/v/t1.6435-9/120363501_10223197542948968_6161840330648549637_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=w6ZtgYa0_EMQ7kNvgFfDG92&_nc_oc=AdlNOwYei9HdSAhilqJST5f8fyt5un-n9sL9XoXOyf0Ku6jlkpCHRsSyLz29AukUY1HDrk-IufN-F7xa3WWJ3VA4&_nc_zt=23&_nc_ht=scontent.fsjo7-1.fna&_nc_gid=XHs1GrYVCHHQdMNRMvOYng&oh=00_AYHjhwpwTwTSnR6_4KSiSN_H8fEY9-beh6JSBi38rGjGXg&oe=68044B23"
             alt="Dulce Gustico"
-            width="30"
-            height="30"
+            width="40"
+            height="40"
           />
-          Dulce Gustico
+          <span className="fw-bold fs-5">Dulce Gustico</span>
         </a>
 
+        {/* Botón de colapso para móviles */}
         <button
           className="navbar-toggler"
           type="button"
@@ -29,6 +31,7 @@ function NavigationBar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+        {/* Elementos del menú */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
@@ -39,7 +42,7 @@ function NavigationBar() {
 
             <li className="nav-item">
               <a className="nav-link" href="/productos">
-                <FaBoxOpen className="me-2" /> Productos 
+                <FaBoxOpen className="me-2" /> Productos
               </a>
             </li>
 
@@ -50,28 +53,24 @@ function NavigationBar() {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="/Contacto">
+              <a className="nav-link" href="/contacto">
                 <FaPhoneAlt className="me-2" /> Contacto
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="/Login">
+              <a className="nav-link" href="/cursos">
                 <FaSignInAlt className="me-2" /> Nuestros cursos
               </a>
             </li>
           </ul>
-          <form className="d-flex ms-3" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          
+          {/* Botón de Registro */}
+          <div className="ms-lg-3 mt-2 mt-lg-0">
+            <a className="btn btn-warning fw-bold" href="/registros">
+              Registro
+            </a>
+          </div>
         </div>
       </div>
     </nav>

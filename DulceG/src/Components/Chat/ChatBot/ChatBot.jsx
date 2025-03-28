@@ -69,7 +69,7 @@ function ChatBot() {
     return (
         <div className="chatbot-container" style={{ position: 'fixed', bottom: '50px', right: '50px', zIndex: 9999 }}>
             <img
-                src="https://i.pinimg.com/736x/54/41/cf/5441cf0924b4af11d86d537d29c3a084.jpg"
+                src="https://i.pinimg.com/474x/c3/a0/37/c3a037cccfcb72122a41db7ac808e4c7.jpg"
                 alt="Chat"
                 style={{ width: '80px', cursor: 'pointer' }}
                 onClick={alternarChat}
