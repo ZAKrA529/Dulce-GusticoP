@@ -161,36 +161,6 @@
       "id": "13ba",
       "remitente": "bot",
       "texto": "Sí, hacemos entregas a domicilio"
-    },
-    {
-      "id": "e455",
-      "remitente": "usuario",
-      "texto": "suma 2+2"
-    },
-    {
-      "id": "3f45",
-      "remitente": "bot",
-      "texto": "Hubo un error, intenta más tarde."
-    },
-    {
-      "id": "3e44",
-      "remitente": "usuario",
-      "texto": "¿Hacen entregas a domicilio?"
-    },
-    {
-      "id": "0572",
-      "remitente": "bot",
-      "texto": "Sí, hacemos entregas a domicilio"
-    },
-    {
-      "id": "e88e",
-      "remitente": "usuario",
-      "texto": "dwde"
-    },
-    {
-      "id": "ce49",
-      "remitente": "bot",
-      "texto": "Hubo un error, intenta más tarde."
     }
   ],
   "respuestasPersonalizadas": [
@@ -210,13 +180,30 @@
       "respuesta": "Sí, hacemos entregas a domicilio"
     }
   ],
-  "Productos": [],
   "registro": [
     {
-      "id": "f825",
-      "nombre": "Dayana",
-      "correoE": "dayana@gmail.com",
-      "Contrasena": "111"
+      "id": "4b16",
+      "nombre": "Daniel",
+      "correoE": "daniel@gmail.com",
+      "Contrasena": "29102006"
+    }
+  ],
+  "ventas": [
+    {
+      "id": "1712434344556",
+      "fecha": "2025-03-31",
+      "producto": "Laptop Lenovo",
+      "cantidad": 2,
+      "precio": 450000,
+      "cliente": "Juan Pérez"
+    },
+    {
+      "id": 1743439718818,
+      "fecha": "2025-03-14",
+      "producto": "Pastel",
+      "cantidad": "20",
+      "precio": "10000",
+      "cliente": "Daaniela"
     }
   ]
 }

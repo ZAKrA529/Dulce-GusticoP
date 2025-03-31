@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function UserP() {
   const [usuarios, setUsuarios] = useState([]);
   const [nuevoUsuario, setNuevoUsuario] = useState({ nombre: '', correoE: '', Contrasena: '' });
-  const [editandoUsuario, setEditandoUsuario] = useState(null); // Identifica si se está editando un usuario
+  const [editandoUsuario, setEditandoUsuario] = useState(null);
 
   useEffect(() => {
     async function fetchUsuarios() {
@@ -14,19 +14,13 @@ function UserP() {
         const datos = await registro.GetUser();
         setUsuarios(datos);
       } catch {
-        Swal.fire({
-          title: 'Error',
-          text: 'No se pudieron cargar los usuarios.',
-          icon: 'error',
-          confirmButtonText: 'Aceptar'
-        });
+        Swal.fire('Error', 'No se pudieron cargar los usuarios.', 'error');
       }
     }
     fetchUsuarios();
   }, []);
 
-   // Función para eliminar un usuario
-   const eliminarUsuario = async (id) => {
+  const eliminarUsuario = async (id) => {
     const confirmacion = await Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción no se puede deshacer.',
@@ -38,21 +32,20 @@ function UserP() {
 
     if (confirmacion.isConfirmed) {
       try {
-        await registro.DeleteUser(id); // Llama al DELETE para eliminar un usuario
-        setUsuarios(usuarios.filter((usuario) => usuario.id !== id)); // Filtra y actualiza la lista excluyendo el usuario eliminado
+        await registro.DeleteUser(id);
+        setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
         Swal.fire('Eliminado', 'Usuario eliminado correctamente.', 'success');
       } catch {
         Swal.fire('Error', 'No se pudo eliminar el usuario.', 'error');
       }
     }
   };
-   // Función para agregar un nuevo usuario
+
   async function agregarUsuario() {
     if (!nuevoUsuario.nombre || !nuevoUsuario.correoE || !nuevoUsuario.Contrasena) {
       Swal.fire('Por favor, completa todos los campos', '', 'warning');
       return;
     }
-
     try {
       const usuarioCreado = await registro.PostUser(nuevoUsuario.nombre, nuevoUsuario.correoE, nuevoUsuario.Contrasena);
       setUsuarios([...usuarios, usuarioCreado]);
@@ -63,55 +56,43 @@ function UserP() {
     }
   }
 
-  // Función para guardar los cambios al editar un usuario 
+  const iniciarEdicion = (usuario) => {
+    setEditandoUsuario(usuario);
+    setNuevoUsuario(usuario);
+  };
+
+  const manejarCambioEdicion = (e) => {
+    setNuevoUsuario({ ...nuevoUsuario, [e.target.name]: e.target.value });
+  };
+
   const guardarEdicion = async () => {
     try {
-      await registro.Updateuser(editandoUsuario.id, nuevoUsuario); 
+      await registro.Updateuser(nuevoUsuario.nombre, nuevoUsuario.correoE, nuevoUsuario.Contrasena, nuevoUsuario.id);
       setUsuarios(
-        usuarios.map((usuario) =>
-          usuario.id === editandoUsuario.id ? { ...usuario, ...nuevoUsuario } : usuario
-        )
-      ); // Actualiza la lista de usuarios con los nuevos datos
+        usuarios.map((usuario) => usuario.id === nuevoUsuario.id ? nuevoUsuario : usuario)
+      );
       Swal.fire('Actualizado', 'Usuario actualizado correctamente.', 'success');
-      setEditandoUsuario(null); // Limpia el estado de edición
-      setNuevoUsuario({ nombre: '', correoE: '', Contrasena: '' }); // Limpia el formulario
+      setEditandoUsuario(null);
+      setNuevoUsuario({ nombre: '', correoE: '', Contrasena: '' });
     } catch {
       Swal.fire('Error', 'No se pudo actualizar el usuario.', 'error');
     }
   };
 
-
-
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Lista de Usuarios</h1>
-
       <div className="mb-4">
-        <h3>Agregar Usuario</h3>
-        <input
-          type="text"
-          placeholder="Nombre"
-          className="form-control mb-2"
-          value={nuevoUsuario.nombre}
-          onChange={e => setNuevoUsuario({ ...nuevoUsuario, nombre: e.target.value })}
-        />
-        <input
-          type="email"
-          placeholder="Correo Electrónico"
-          className="form-control mb-2"
-          value={nuevoUsuario.correoE}
-          onChange={e => setNuevoUsuario({ ...nuevoUsuario, correoE: e.target.value })}
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          className="form-control mb-2"
-          value={nuevoUsuario.Contrasena}
-          onChange={e => setNuevoUsuario({ ...nuevoUsuario, Contrasena: e.target.value })}
-        />
-        <button className="btn btn-success" onClick={agregarUsuario}>Agregar Usuario</button>
+        <h3>{editandoUsuario ? 'Editar Usuario' : 'Agregar Usuario'}</h3>
+        <input type="text" name="nombre" placeholder="Nombre" className="form-control mb-2" value={nuevoUsuario.nombre} onChange={manejarCambioEdicion} />
+        <input type="email" name="correoE" placeholder="Correo Electrónico" className="form-control mb-2" value={nuevoUsuario.correoE} onChange={manejarCambioEdicion} />
+        <input type="password" name="Contrasena" placeholder="Contraseña" className="form-control mb-2" value={nuevoUsuario.Contrasena} onChange={manejarCambioEdicion} />
+        {editandoUsuario ? (
+          <button className="btn btn-warning" onClick={guardarEdicion}>Guardar Cambios</button>
+        ) : (
+          <button className="btn btn-success" onClick={agregarUsuario}>Agregar Usuario</button>
+        )}
       </div>
-
       <div className="table-responsive">
         <table className="table table-striped table-bordered">
           <thead className="table-dark">
@@ -126,25 +107,11 @@ function UserP() {
             {usuarios.map((usuario) => (
               <tr key={usuario.id}>
                 <td>{usuario.id}</td>
+                <td>{usuario.nombre}</td>
+                <td>{usuario.correoE}</td>
                 <td>
-                  <input
-                    type="text"
-                    value={usuario.nombre}
-                    className="form-control"
-                    onChange={(e) => guardarEdicion(usuario.id, e.target.value, usuario.correoE)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="email"
-                    value={usuario.correoE}
-                    className="form-control"
-                    onChange={(e) => guardarEdicion(usuario.id, usuario.nombre, e.target.value)}
-                  />
-                </td>
-                <td>
+                  <button className="btn btn-warning me-2" onClick={() => iniciarEdicion(usuario)}>Editar</button>
                   <button className="btn btn-danger" onClick={() => eliminarUsuario(usuario.id)}>Eliminar</button>
-                  <button className='btn btn-warning' onClick={() => guardarEdicion(usuario.id)}>Editar</button>
                 </td>
               </tr>
             ))}

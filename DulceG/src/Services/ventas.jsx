@@ -1,6 +1,6 @@
-async function GetReports() {
+async function GetUser() {
     try {
-        const response = await fetch('http://localhost:3004/reportes', {
+        const response = await fetch('http://localhost:3003/registro', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,12 +18,12 @@ async function GetReports() {
     }
 }
 
-async function PostReports(nombre,  correoE, Contrasena, ) {
+async function PostUser(nombre,  correoE, Contrasena) {
 
     const userData = {nombre, correoE, Contrasena};
     try {
 
-        const response = await fetch("http://localhost:3004/reportes", {
+        const response = await fetch("http://localhost:3003/registro", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,11 +42,11 @@ async function PostReports(nombre,  correoE, Contrasena, ) {
     }
 }
 
-async function UpdateReports(nombre,  correoE, Contrasena,id) {
+async function Updateuser(nombre,  correoE, Contrasena,id) {
     try {
         const userData = {nombre,  correoE, Contrasena, id };
 
-        const response = await fetch(`http://localhost:3004/reportes/${id}`, {
+        const response = await fetch(`http://localhost:3003/registro/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -65,9 +65,9 @@ async function UpdateReports(nombre,  correoE, Contrasena,id) {
     }
 }
 
-async function DeleteReports(id) {
+async function DeleteUser(id) {
     try {
-        const response = await fetch(`http://localhost:3004/reportes/${id}`, {
+        const response = await fetch(`http://localhost:3003/registro/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -86,4 +86,4 @@ async function DeleteReports(id) {
 }
 
 
-export default { DeleteReports, GetReports, PostReports, UpdateReports };
+export default { GetUser, DeleteUser, PostUser, Updateuser };
