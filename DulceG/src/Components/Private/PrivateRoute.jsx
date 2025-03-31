@@ -7,7 +7,7 @@ const PrivateRoute = ({ element }) => {
   if (estasautenticado) {
     return element;
   } else {
-    return <Navigate to="/admin" />;
+    return <Navigate to="/registros" />;
   }
 };
 

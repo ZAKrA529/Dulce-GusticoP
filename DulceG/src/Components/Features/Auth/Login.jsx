@@ -66,6 +66,7 @@ function RegisterC() {
         icon: 'success',
         confirmButtonText: 'Aceptar'
       }).then(() => navigate("/"));
+      localStorage.setItem("token", "admin")
     }
   }
 

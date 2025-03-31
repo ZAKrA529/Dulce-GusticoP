@@ -38,7 +38,6 @@ function AdminC() {
         <h1 className="mb-4">Bienvenido Administrador don Alex</h1>
         <RespuestasCrud></RespuestasCrud> <br />  <br />
         <Adds></Adds>
-        <Grafico></Grafico>
       </div>
     </div>
   );

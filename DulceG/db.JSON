@@ -5,140 +5,140 @@
       "name": "Pastel de Chocolate",
       "description": "Delicioso pastel de chocolate con relleno cremoso.",
       "price": 25,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "2",
       "name": "Cupcakes Variados",
       "description": "Caja con 6 cupcakes de distintos sabores.",
       "price": 15,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "3",
       "name": "Cheesecake de Fresa",
       "description": "Cheesecake cremoso con mermelada de fresa.",
       "price": 30,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "4",
       "name": "Macarons Franceses",
       "description": "Caja con 10 macarons de almendra en distintos sabores.",
       "price": 20,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "5",
       "name": "Tiramisú",
       "description": "Postre italiano con café, queso mascarpone y cacao.",
       "price": 18,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "6",
       "name": "Galletas Decoradas",
       "description": "Caja con 12 galletas de mantequilla decoradas con glaseado.",
       "price": 12,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "7",
       "name": "Brazo Gitano",
       "description": "Bizcocho enrollado relleno de crema y frutas.",
       "price": 22,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "8",
       "name": "Croissants",
       "description": "4 croissants de mantequilla recién horneados.",
       "price": 10,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "9",
       "name": "Dona Glaseada",
       "description": "Dona esponjosa con glaseado de azúcar.",
       "price": 3,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "10",
       "name": "Brownies",
       "description": "Brownies de chocolate con nueces.",
       "price": 12,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "11",
       "name": "Tarta de Manzana",
       "description": "Tarta de manzana con toque de canela.",
       "price": 28,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "12",
       "name": "Pan de Elote",
       "description": "Pan dulce de elote con un toque de vainilla.",
       "price": 15,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "13",
       "name": "Churros",
       "description": "6 churros rellenos con chocolate o dulce de leche.",
       "price": 10,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "14",
       "name": "Milhojas",
       "description": "Postre de hojaldre con crema pastelera y azúcar glas.",
       "price": 18,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "15",
       "name": "Alfajores",
       "description": "Caja con 8 alfajores de dulce de leche.",
       "price": 14,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "16",
       "name": "Pionono",
       "description": "Bizcocho enrollado con dulce de leche y merengue.",
       "price": 20,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "17",
       "name": "Muffins de Arándanos",
       "description": "4 muffins esponjosos con arándanos.",
       "price": 10,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "18",
       "name": "Pastel Tres Leches",
       "description": "Pastel húmedo bañado en tres tipos de leche.",
       "price": 25,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "19",
       "name": "Eclair de Chocolate",
       "description": "Eclair relleno de crema pastelera y cubierto de chocolate.",
       "price": 8,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     },
     {
       "id": "20",
       "name": "Tarta de Frutas",
       "description": "Tarta con crema pastelera y frutas frescas.",
       "price": 30,
-      "image": "https://via.placeholder.com/150"
+      "image": "#"
     }
   ],
   "Mensajes": [
@@ -180,23 +180,8 @@
       "respuesta": "Sí, hacemos entregas a domicilio"
     }
   ],
-  "registro": [
-    {
-      "id": "4b16",
-      "nombre": "Daniel",
-      "correoE": "daniel@gmail.com",
-      "Contrasena": "29102006"
-    }
-  ],
+  "registro": [],
   "ventas": [
-    {
-      "id": "1712434344556",
-      "fecha": "2025-03-31",
-      "producto": "Laptop Lenovo",
-      "cantidad": 2,
-      "precio": 450000,
-      "cliente": "Juan Pérez"
-    },
     {
       "id": 1743439718818,
       "fecha": "2025-03-14",
@@ -204,6 +189,14 @@
       "cantidad": "20",
       "precio": "10000",
       "cliente": "Daaniela"
+    },
+    {
+      "id": 1743455861055,
+      "fecha": "2025-03-13",
+      "producto": "Pastel",
+      "cantidad": "11",
+      "precio": "1000",
+      "cliente": "Daniel"
     }
   ]
 }

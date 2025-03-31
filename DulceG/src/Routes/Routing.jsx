@@ -21,7 +21,7 @@ const Routing = () => {
     <Routes>
       <Route path="/" element={<Interfaz />} />
       <Route path="/contacto" element={<Contacto />} />
-      <Route path="/admin" element={<Admin />} />
+      <Route path="/admin" element={<PrivateRoute element={<Admin />} />} />
       <Route path="/registros" element={<InicioSesion />} />
       <Route path="/users" element={<PrivateRoute element={<Users />} />} />
       <Route path="/productos" element={<Productos />} />

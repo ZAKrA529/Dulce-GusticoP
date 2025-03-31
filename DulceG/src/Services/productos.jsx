@@ -1,19 +1,15 @@
-async function GetProducts() {
+export async function GetProducts() {
     try {
         const response = await fetch('http://localhost:3003/productosC', {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            headers: { 'Content-Type': 'application/json' }
         });
 
-        if (!response.ok) {
-            throw new Error('Error fetching users');
-        }
+        if (!response.ok) throw new Error('Error fetching products');
 
         return await response.json();
     } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error('Error fetching products:', error);
         throw error;
     }
 }
